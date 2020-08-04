@@ -74,7 +74,7 @@ class BurgerBuilder extends Component {
 
     return (
       <Auxiliary>
-        <Modal>
+        <Modal show={this.state.purchasing}>
           <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -84,6 +84,7 @@ class BurgerBuilder extends Component {
           disabledInfo={disabledIngredients}
           price={this.state.totalPrice}
           purchaseable={this.state.purchaseable}
+          purchased={this.purchasingHandler}
         />
       </Auxiliary>
     );
